@@ -1,0 +1,250 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+/* Header e Navegação */
+header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+header.scrolled {
+    background-color: #fff;
+}
+
+header.scrolled .logo, header.scrolled nav ul li a {
+    color: #333;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00aaff;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0077cc;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    animation: scroll 2s infinite;
+}
+
+.scroll-down::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollDown 2s infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%);
+    }
+    40% {
+        transform: translateX(-50%) translateY(10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(5px);
+    }
+}
+
+@keyframes scrollDown {
+    0%, 20%, 50%, 80%, 100% {
+        top: 10px;
+    }
+    40% {
+        top: 20px;
+    }
+    60% {
+        top: 15px;
+    }
+}
+
+/* Seções */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#sobre p, #projetos .projeto p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.projeto {
+    margin-bottom: 60px;
+}
+
+#projetos .projeto {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#projetos .projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulário de Contato */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button.btn:hover {
+    background-color: #0077cc;
+    transform: translateY(-5px);
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* Adicionar efeito de scroll */
+html {
+    scroll-behavior: smooth;
+}
